@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduSupport</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>EduSupport</h1>
+
+            <p>Student Support & Ticket Management</p>
+
+            <h2>Login</h2>
+
+            <label>Select Role</label>
+
+            <select id="role">
+                <option value="">-- Select Role --</option>
+                <option value="student">Student</option>
+                <option value="staff">Staff</option>
+                <option value="manager">Manager</option>
+            </select>
+
+            <button onclick="login()">Login</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        function login() {
+
+            let role = document.getElementById("role").value;
+
+            if (role === "") {
+                alert("Please select your role");
+                return;
+            }
+
+            if (role === "student") {
+                window.location.href = "student.html";
+            }
+
+            else if (role === "staff") {
+                window.location.href = "staff.html";
+            }
+
+            else if (role === "manager") {
+                window.location.href = "manager.html";
+            }
+        }
+    </script>
+
+</body>
+</html>

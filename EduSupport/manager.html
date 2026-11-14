@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manager Dashboard - EduSupport</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div>
+            <h1>EduSupport</h1>
+            <p>Manager Dashboard</p>
+        </div>
+
+        <button onclick="logout()">Logout</button>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="welcome">
+
+            <h2>Welcome, Manager 👋</h2>
+
+            <p>
+                Monitor and manage all student support tickets.
+            </p>
+
+        </div>
+
+
+        <!-- Summary Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Total Tickets</h3>
+                <p id="totalTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Open Tickets</h3>
+                <p id="openTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Resolved Tickets</h3>
+                <p id="resolvedTickets">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Ticket Management -->
+
+        <section class="ticket-section">
+
+            <h2>All Student Tickets</h2>
+
+            <!-- Filters -->
+
+            <div class="filters">
+
+                <select id="statusFilter" onchange="displayTickets()">
+
+                    <option value="All">All Status</option>
+                    <option value="Open">Open</option>
+                    <option value="Assigned">Assigned</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Closed">Closed</option>
+
+                </select>
+
+
+                <select id="priorityFilter" onchange="displayTickets()">
+
+                    <option value="All">All Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Tickets Table -->
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Category</th>
+                        <th>Subject</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Activity</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="managerTicketTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/data.js"></script>
+
+    <script src="js/manager.js"></script>
+
+</body>
+
+</html>

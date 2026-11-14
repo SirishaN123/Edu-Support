@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard - EduSupport</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+        <div>
+            <h1>EduSupport</h1>
+            <p>Student Support & Ticket Management</p>
+        </div>
+
+        <button onclick="logout()">Logout</button>
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="welcome">
+            <h2>Welcome, Student 👋</h2>
+            <p>Manage your support requests from here.</p>
+        </div>
+
+
+        <!-- Summary Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Total Tickets</h3>
+                <p id="totalTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Open Tickets</h3>
+                <p id="openTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Resolved Tickets</h3>
+                <p id="resolvedTickets">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Create Ticket -->
+
+        <section class="ticket-section">
+
+            <h2>Create New Ticket</h2>
+
+            <form id="ticketForm">
+
+                <label>Category</label>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Fees">Fees</option>
+                    <option value="Attendance">Attendance</option>
+                    <option value="ID Card">ID Card</option>
+                    <option value="Documents">Documents</option>
+                    <option value="Certificates">Certificates</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                <label>Subject</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter your issue"
+                    required
+                >
+
+
+                <label>Description</label>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe your issue"
+                    required
+                ></textarea>
+
+
+                <label>Priority</label>
+
+                <select id="priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+
+                <button type="submit">
+                    Submit Ticket
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- My Tickets -->
+
+        <section class="ticket-section">
+
+            <h2>My Tickets</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Category</th>
+                        <th>Subject</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ticketTable">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/student.js"></script>
+
+</body>
+
+</html>
